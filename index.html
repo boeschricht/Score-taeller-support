@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Score tæller til fodbold — Support & Privatlivspolitik</title>
+    <title>Score tæller til fodbold — Support & Privacy</title>
     <style>
         :root {
             --primary-color: #2ed573;
@@ -104,6 +104,11 @@
             color: #86868b;
             text-align: center;
         }
+
+        /* Skjul sprog-sektioner som standard */
+        .lang-section {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -112,31 +117,62 @@
     <div class="card">
         <div class="app-icon-placeholder">⚽</div>
         
-        <h1>Score tæller til fodbold</h1>
-        <p class="subtitle">Support & Privatliv</p>
-        
-        <!-- SUPPORT SEKTION -->
-        <section>
-            <h2>Brug for hjælp?</h2>
-            <p>Hvis du oplever problemer, har fundet en fejl eller har forslag til nye funktioner, kan du oprette en sag (Issue) direkte på vores GitHub-side. Det kræver en gratis GitHub-konto.</p>
+        <!-- DANSK VERSION -->
+        <div id="dk-content" class="lang-section">
+            <h1>Score tæller til fodbold</h1>
+            <p class="subtitle">Support & Privatliv</p>
             
-            <!-- RET LINKET HERUNDER SÅ DET PASSER TIL DIT REPO -->
-            <a href="https://github.com/boeschricht/Score-taeller-support/issues/new" target="_blank" class="btn">Opret support-sag på GitHub</a>
-        </section>
+            <section>
+                <h2>Brug for hjælp?</h2>
+                <p>Hvis du oplever problemer, har fundet en fejl eller har forslag til nye funktioner, kan du oprette en sag (Issue) direkte på vores GitHub-side.</p>
+                <a href="https://github.com/BoEschricht/Score-taeller-fodbold/issues/new" target="_blank" class="btn">Opret support-sag på GitHub</a>
+            </section>
 
-        <hr>
+            <hr>
 
-        <!-- PRIVATLIVSPOLITIK SEKTION -->
-        <section>
-            <h2>Privatlivspolitik</h2>
-            <p><strong>Score tæller til fodbold</strong> indsamler, gemmer eller videresender ingen personlige data eller brugeroplysninger. Appen fungerer fuldstændig offline, og dine data bliver udelukkende gemt lokalt på din egen enhed.</p>
-        </section>
+            <section>
+                <h2>Privatlivspolitik</h2>
+                <p><strong>Score tæller til fodbold</strong> indsamler, gemmer eller videresender ingen personlige data eller brugeroplysninger. Appen fungerer fuldstændig offline, og dine data bliver udelukkende gemt lokalt på din egen enhed.</p>
+            </section>
+        </div>
+
+        <!-- ENGELSK VERSION (Til Apple-testeren og udenlandske brugere) -->
+        <div id="en-content" class="lang-section">
+            <h1>Football Score Counter</h1>
+            <p class="subtitle">Support & Privacy</p>
+            
+            <section>
+                <h2>Need Help?</h2>
+                <p>If you encounter any issues, find bugs, or have feature requests, please open a ticket (Issue) directly on our GitHub repository.</p>
+                <a href="https://github.com/BoEschricht/Score-taeller-fodbold/issues/new" target="_blank" class="btn">Open Support Ticket on GitHub</a>
+            </section>
+
+            <hr>
+
+            <section>
+                <h2>Privacy Policy</h2>
+                <p><strong>Score tæller til fodbold</strong> does not collect, store, or transmit any personal data or user information. The app operates completely offline, and your data is stored exclusively on your local device.</p>
+            </section>
+        </div>
+
     </div>
 
     <footer>
         &copy; 2026 Bo Eschricht. Alle rettigheder forbeholdes.
     </footer>
 </div>
+
+<script>
+    // Tjekker browserens sprogindstilling
+    const userLang = navigator.language || navigator.userLanguage;
+    
+    // Hvis sproget starter med 'da', vis dansk - ellers vis engelsk
+    if (userLang.startsWith('da')) {
+        document.getElementById('dk-content').style.display = 'block';
+    } else {
+        document.getElementById('en-content').style.display = 'block';
+    }
+</script>
 
 </body>
 </html>
